@@ -1,0 +1,500 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: lato, Helvetica, sans-serif;
+}
+
+#containerApplication{
+  background-image: url("../ressources/imgMemoryCards/arriere_plan.JPG");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: bottom right;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position:relative;
+  min-height: 100vh;
+}
+
+#containerTitre{
+  margin-top:10px;
+}
+
+#titreJeu{
+  text-align: center;
+  color: #0bad49;
+  font-size:35px;
+}
+
+#conseil {
+  font-size: 22px;
+  margin-top: 10px;
+}
+
+#score {
+  margin-top:60px;
+  font-size: 26px;
+}
+
+#timer {
+  font-size: 26px;
+  margin-top: 15px;
+}
+
+#timer,
+#score,
+#conseil {
+  text-align: center;
+  color: #f1f1f1;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 130px);
+  width: 100%;
+  gap: 10px;
+  margin: 30px auto 0;
+}
+
+.card {
+  aspect-ratio: 1/1;
+  perspective: 1000px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease-out;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+.double-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.6s;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+.face,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.back:hover {
+  background: gray;
+}
+
+.face {
+  transform: rotateY(180deg);
+}
+.face img {
+  max-width: 100%;
+  max-height:100%;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.back img {
+  width: 70%;
+  border-radius: 8px;
+}
+
+
+.carteRetournee {
+  transform: rotateY(180deg);
+}
+
+#containerBtns {
+  width: 300px;
+  position: absolute;
+  top:15px;
+  left:15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#containerBtnsNiveau{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#btnNouvellePartie,
+.btnNiveau {
+  margin:5px;
+  padding:10px;
+  border:solid 1px rgb(46, 46, 46);
+  border-radius:8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  color: rgb(0, 0, 0)
+}
+
+.btnNiveau {
+  width: 120px;
+}
+
+.btnNiveau:hover {
+  background-color: rgb(150, 150, 150);
+}
+
+#containerBtnNouvellePartie {
+  display: flex;
+  margin-top:15px;
+  width: 100%;
+}
+
+#btnNouvellePartie {
+  width: 200px;
+  background-color:rgb(174, 174, 174);
+}
+
+#btnNouvellePartie:hover {
+  background-color: rgb(54, 142, 242);
+}
+
+#containerBestScore{
+  flex-direction: column;
+}
+
+#bravoBestScore{
+  margin-top:30px;
+  text-align: center;
+  font-size: 22px;
+  color:rgb(0, 116, 10);
+  padding:10px 20px;
+  border: solid 3px rgb(255, 230, 0);
+  background-color: rgb(201, 201, 201);
+  border-radius: 10px;
+}
+
+#inputPrenomBestScore {
+  padding:8px;
+  font-size:16px;
+  width: 220px;
+  margin : 10px 0;
+  text-align: center;
+  border-radius: 5px;
+  border: solid 1px white; 
+}
+
+#buttonChampsBestScore {
+  margin: 10px 0;
+}
+
+#buttonAnnulerChampsBestScore,
+#buttonValidChampsBestScore{
+  padding:5px 22px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: solid 1px rgb(255, 255, 255);
+  transition: 0.2s;
+  cursor: pointer;
+  color: white;
+  margin: 0 8px;
+}
+
+#buttonValidChampsBestScore {
+  background-color:rgb(0, 81, 255);
+}
+
+#buttonAnnulerChampsBestScore {
+  background-color:rgb(123, 123, 123);
+}
+
+
+
+#buttonValidChampsBestScore:hover {
+  background-color:rgb(160, 160, 160);
+}
+
+#containerRappelBestScore {
+ margin-top:10px;
+ position: absolute;
+ top:15px;
+ right:15px;
+ width: 250px;
+}
+
+#labelMeilleurScore{
+  color: white;
+  font-size:20px;
+  text-align: center;
+  margin: 10px;
+
+}
+
+.labelDeBestScore{
+  background-color: rgb(246, 246, 98);
+  width: 100%;
+  padding:10px;
+  border-radius:18px;
+  margin-top: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+#effacer_score{
+  background-color: rgb(99, 137, 233);
+  width: 100%;
+  padding:10px;
+  border-radius:18px;
+  margin-top: 20px;
+  font-size: 20px;
+  color:rgb(255, 255, 255);
+  text-align: center;
+  cursor:pointer;
+}
+
+.containerGrid {
+  display: flex;
+}
+
+#realisation {
+  margin-top: 80px;
+  font-size: 16px;
+}
+
+#realisation a {
+  color:white;
+  font-size: 14px;
+  text-decoration: none;
+
+}
+
+/************************  Médias queries**********************************/
+
+  @media screen and (max-width: 1240px) {
+    .grid {
+      grid-template-columns: repeat(4, 120px);
+    }
+
+    #containerBtns{
+      position:relative;
+      left:0;
+      top:0;
+      width:95%;
+      margin-top: 25px;
+    }
+
+    #containerBtnsNiveau {
+      width:100%;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    #containerBtnNouvellePartie {
+      justify-content: center;
+    }
+
+    #score {
+      margin-top:10px;
+    }
+
+    #bravoBestScore{
+      padding:7px 12px;
+    }
+
+    #containerInfosScores {
+      width:100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top:10px;
+    }
+
+    #containerBestScore{
+      margin-top: 25px;
+    }
+
+    #containerRappelBestScore {
+      position:relative;
+      top:0;
+      left:0;
+      width: 100%;
+      display: flex;
+      padding:5px;
+      margin-top:10px;
+      margin-bottom:20px;
+      flex-direction: column;
+    }
+    
+    #rappelBestScore{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+
+    }
+
+    #bravoBestScore {
+      margin-top:0;
+    }
+
+    #effacer_score,
+    .labelDeBestScore{
+      width: 200px;
+      margin: 10px;
+    }
+
+  }
+
+  @media screen and (max-width: 560px) {
+
+    #containerTitre{
+      margin-top:8px;
+    }
+
+    #titreJeu{
+      text-align: center;
+      color: #0bad49;
+      font-size:24px;
+    }
+    
+    #conseil {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .containerGrid{
+      margin-top: 10px;
+    }
+
+    .grid {
+      display: grid;
+      width: 90vw;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin: 0 auto 0;
+    }
+
+    #containerBtns{
+      position:relative;
+      left:0;
+      top:0;
+      width:95%;
+      margin-top: 25px;
+    }
+
+    #containerBtnsNiveau {
+      width:100%;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    #btnNouvellePartie,
+    .btnNiveau {
+      font-size:16px;
+      width:90px;
+      padding:5px;
+      border: solid 1px rgb(71, 71, 71);
+      border-radius: 5px;
+    }
+
+    #btnNouvellePartie{
+      width: 150px;
+      margin-top:10px;
+      background-color:rgb(174, 174, 174);
+    }
+
+    #containerInfosScores {
+      width:100%;
+      display: flex;
+      justify-content: space-around;
+      margin-top:10px;
+    }
+
+    #containerBestScore {
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+
+    #bravoBestScore{
+      font-size:20px;
+    }
+
+    #inputPrenomBestScore{
+      padding:5px;
+      margin:  8px 0;
+      width:200px;
+      font-size:16px;
+    }
+
+    #buttonChampsBestScore {
+      margin: 8px 0;
+    }
+    
+    #containerInfosScores #timer,
+    #containerInfosScores #score {
+      font-size:20px;
+      margin-top: 20px;
+      margin: 10px;
+    }
+
+    #containerRappelBestScore {
+      position:relative;
+      top:0;
+      left:0;
+      width: 100%;
+      display: flex;
+      padding:5px;
+      margin-top:10px;
+      margin-bottom:20px;
+      flex-direction: column;
+    }
+
+    #rappelBestScore {
+      width:100%;
+      margin: 0 auto;
+      display:flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    #labelMeilleurScore{
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    #effacer_score,
+    .labelDeBestScore{
+      font-size:16px;
+      width:140px;
+      margin-top:0;
+      margin:5px 5px;
+    }
+
+    #realisation {
+      margin-top: 40px;
+      font-size: 16px;
+    }
+
+  }
+  /* Insérez vos propriétés CSS ici, avec vos sélecteurs*/
