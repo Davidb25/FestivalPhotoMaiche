@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleMemoryCards.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    
+    <title>Document</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Site Dev</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="memoryCards.html">MemoryCards</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="jumelles.html">Jumelles</a>
+            </li>         
+        </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="containerApplication">
+    <div id="containerTitre">
+        <p id="titreJeu">MEMORY CARDS</p>
+        <p id="conseil"> Retrouvez toutes les paires.</p>
+    </div>
+    <div id="containerBtns">
+        <div id="containerBtnsNiveau">
+            <div>
+            <button class="btnNiveau" id="btnFacile">niveau 1</button>
+            </div>
+            <div>
+            <button class="btnNiveau" id="btnMoyen">niveau 2</button>
+            </div>
+            <div>
+            <button class="btnNiveau" id="btnDifficile">niveau 3</button>
+            </div>
+        </div>
+        <div id="containerBtnNouvellePartie">
+            <button id="btnNouvellePartie"> nouvelle partie </button>
+        </div>
+        <div id="containerInfosScores">
+            <div class="infoScore" id="score">Tentatives : 0</div>
+            <div class="infoScore" id="timer">Timer : 0</div>
+        </div>
+        <div id="containerBestScore">
+            <div id="bravoBestScore">
+            <div>Meilleur score</div>
+            <form id="formBestScore" method="post">
+                <div><input id="inputPrenomBestScore" type="text" placeholder="Entrez votre prénom" required autocomplete="off"></div>
+                <div id="buttonChampsBestScore"><button id="buttonAnnulerChampsBestScore" type="button" onclick="annulerChampsBestScore()">annuler</button><button id="buttonValidChampsBestScore" type="submit">valider</button></div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <div class="containerGrid">
+        <div class="grid">
+        </div>
+        </div>
+    <div id="containerRappelBestScore">
+        <div id="labelMeilleurScore">
+            <p>Meilleur score</p>
+        </div>
+        <div id="rappelBestScore">
+            <div class="labelDeBestScore">Tentatives : <span id="valueBestScore"></span></div>
+            <div class="labelDeBestScore">par : <span id="prenomBestScore"></span></div>
+            <div class="labelDeBestScore">chrono : <span id="chronoBestScore"></span></div>
+            <div id="effacer_score" class="labelDeBestScore" onclick="effacerScore()">reset score</div>
+        </div>
+    </div>
+    <div id="realisation">MemoryCardsFocus v1.0_2024 - Réalisation :<span><a href="mailto:david.brot@orange.fr"> David Brot </a></span></div>
+</div>
+
+
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/appMemoryCards.js"></script>
+    
+</body>
+</html>

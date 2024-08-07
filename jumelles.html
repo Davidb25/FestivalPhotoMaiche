@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleJumelles.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <title>Document</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Site Dev</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="memoryCards.html">MemoryCards</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="jumelles.html">Jumelles</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="containerApplication">
+
+    <svg id="svg" width="100%" height="100vh">
+
+        <mask id="svgmask3" style="border:solid 4px blue">
+            <circle id="circle1" fill="#ffffff" cx="110" cy="0" r=""></circle>
+            <circle id="circle2" fill="#ffffff" cx="330" cy="0" r=""></circle>
+          </mask>
+
+        <image style="width: 100%;" id="imageBackground" href="" mask="url(#svgmask3)"></image>
+    </svg>
+    <div class="container-fluid position-absolute top-0 start-0 mt-3  d-flex justify-content-center">
+        <div id="changeImage">changer image</div>
+    </div>
+</div>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/appJumelles.js"></script>
+</body>
+</html>
